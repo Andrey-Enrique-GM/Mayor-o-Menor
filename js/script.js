@@ -7,24 +7,34 @@ botonAceptar.addEventListener("click", function() {
 
     const result = document.getElementById("resultado");
 
-    if (number01 >= number02) {
-        result.textContent = number01;
-        if (number01 >= 100) {
+    // isNaN = is not a number
+    if (isNaN(number01) || isNaN(number02)) {
+        result.textContent = "Debe ingresar solamente numeros"
+        return;
+    }
+
+    const num1 = Number(number01);
+    const num2 = Number(number02);
+
+    
+    if (num1 >= num2) {
+        result.textContent = num1;
+        if (num1 >= 100) {
             result.style.backgroundColor = 'red';
             return;
         }
-        else if (number01 < 100) {
+        else if (num1 < 100) {
             result.style.backgroundColor = 'blue';
             return;
         }
     }
-    else if (number02 >= number01) {
-        result.textContent = number02;
-        if (number02 >= 100) {
+    else if (num2 >= num1) {
+        result.textContent = num2;
+        if (num2 >= 100) {
             result.style.backgroundColor = 'red';
             return;
         }
-        else if (number02 < 100) {
+        else if (num2 < 100) {
             result.style.backgroundColor = 'blue';
             return;
         }
